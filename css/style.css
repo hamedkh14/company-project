@@ -1,0 +1,54 @@
+@font-face {
+  font-family: Renner;
+  src:url('../assets/font/Renner.eot?#iefix') format('embedded-opentype'),
+				 url('../assets/font/Renner.ttf') format('truetype'),
+				 url('../assets/font/Renner.woff') format('woff');
+  font-style:normal;
+  font-weight:normal;
+}
+
+:root {
+  --color-white: #FFFFFF;
+  --color-primary: #162B62;
+  --color-secondary: #BA1010;
+  --color-gray1: #F6F6F6;
+  --color-gray2: #6C7176;
+  --color-black1: #121212;
+  --color-black2: #212121;
+  --color-black3: #313131;
+  --color-black4: #515151;
+  --color-black6: #777777;
+}
+
+:root {
+  --m: 8px;
+  --p: 8px;
+  --transition: 0.3s;
+  --border-radius: 8px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Renner';
+}
+
+* {
+  outline: 0;
+  box-sizing: border-box;
+  font-family: 'Renner';
+}
+
+a {
+  text-decoration: none;
+  font-size: 1em;
+  color: var(--color-black2);
+}
+
+a:hover {
+  transition: all var(--transition);
+  color: var(--color-secondary);
+}
