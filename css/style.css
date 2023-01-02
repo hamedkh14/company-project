@@ -10,6 +10,7 @@
 :root {
   --color-white: #FFFFFF;
   --color-primary: #162B62;
+  --color-text-primary: #162B62;
   --color-secondary: #BA1010;
   --color-gray1: #F6F6F6;
   --color-gray2: #6C7176;
@@ -25,6 +26,7 @@
   --p: 8px;
   --transition: 0.3s;
   --border-radius: 8px;
+  --width-default: 1200px;
 }
 
 html, body {
@@ -34,6 +36,7 @@ html, body {
   margin: 0;
   font-size: 16px;
   font-family: 'Renner';
+  background-color: #aaa;
 }
 
 * {
@@ -52,3 +55,235 @@ a:hover {
   transition: all var(--transition);
   color: var(--color-secondary);
 }
+
+.w100 {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+
+
+/* ==============================
+--- Header ---
+============================== */
+
+header {
+  height: 226px;
+  width: 100%;
+}
+
+
+/* Header Topbar */
+header .header-topbar,
+header .header-topbar .container,
+header .header-topbar .container .header-topbar-boxLeft {
+  align-items: center;
+}
+header .header-topbar {
+  height: 50px;
+  background-color: var(--color-gray1);
+  justify-content: center;
+}
+header .header-topbar .container {
+  width: var(--width-default);
+  height: 100%;
+  justify-content: space-between;
+}
+header .header-topbar .container .header-topbar-boxLeft {
+  gap: 10px;
+}
+header .header-topbar .container .header-topbar-boxLeft span {
+  font-size: 1.3em;
+  color: var(--color-secondary);
+}
+header .header-topbar .container .header-topbar-boxLeft p {
+  color: var(--color-text-primary);
+}
+header .header-topbar .container .header-topbar-boxRight {
+  width: 180px;
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+header .header-topbar .container .header-topbar-boxRight a {
+  display: block;
+  height: 100%;
+  color: var(--color-white);
+  text-align: center;
+  line-height: 50px;
+}
+header .header-topbar .container .header-topbar-boxRight:hover {
+  background-color: var(--color-secondary);
+}
+/* End Header Topbar */
+
+/* Header Middlebar */
+header .header-middlebar {
+  height: 135px;
+  background-color: var(--color-white);
+  justify-content: center;
+}
+header .header-middlebar .container {
+  width: var(--width-default);
+  height: 105px;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-middlebar .container .header-middlebar-boxLeft img {
+  width: 160px;
+}
+header .header-middlebar .container .header-middlebar-boxRight,
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-social,
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-contact,
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-contact .boxes {
+  align-items: center;
+}
+header .header-middlebar .container .header-middlebar-boxRight {
+  justify-content: space-between;
+  width: 700px;
+}
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-contact {
+  gap: 40px;
+}
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-contact .boxes {
+  gap: 10px;
+}
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-contact .boxes div:nth-child(1) span.material-symbols-outlined {
+  color: var(--color-secondary);
+  font-size: 3.1em;
+}
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-contact .boxes div:nth-child(2) label {
+  font-size: 0.9em;
+  color: var(--color-gray2);
+}
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-contact .boxes div:nth-child(2) p {
+  margin: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+  transition: all var(--transition);
+}
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-contact .boxes div:nth-child(2) p:hover {
+  color: var(--color-secondary);
+}
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-social {
+  gap: 10px;
+}
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-social a span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-gray1);
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.2em;
+  color: var(--color-primary);
+  transition: all var(--transition);
+}
+header .header-middlebar .container .header-middlebar-boxRight .header-middlebar-boxRight-social a span:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+/* End Header Middlebar */
+
+/* Header Navbar */
+header .header-navbar {
+  position: absolute;
+  height: 70px;
+  background-color: rgba(255, 0, 0, 0.46);
+  margin-top: -35px;
+  justify-content: center;
+}
+header .header-navbar .container {
+  width: var(--width-default);
+  height: 100%;
+  justify-content: space-between;
+}
+header .header-navbar .heade-navbar-boxLeft {
+  width: 940px;
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 0 50px 50px 0;
+  z-index: 1;
+  justify-content: space-between;
+}
+header .header-navbar .heade-navbar-boxLeft::after {
+  position: absolute;
+  content: '';
+  height: 70px;
+  width: 50%;
+  left: 0;
+  z-index: -1;
+  background-color: var(--color-primary);
+}
+header .header-navbar .heade-navbar-boxLeft nav > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+  align-items: center;
+}
+header .header-navbar .heade-navbar-boxLeft nav > ul > li {
+  height: 100%;
+  /* cursor: pointer; */
+  display: flex;
+  align-items: center;
+  transition: all var(--transition);
+}
+header .header-navbar .heade-navbar-boxLeft nav > ul > li.active,
+header .header-navbar .heade-navbar-boxLeft nav > ul > li:hover {
+  background-color: var(--color-secondary);
+}
+header .header-navbar .heade-navbar-boxLeft nav > ul > li > a {
+  color: var(--color-white);
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 25px;
+}
+
+header .header-navbar .heade-navbar-boxLeft .header-navbar-boxLeft-btnSearch {
+  height: 100%;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  overflow: hidden;
+  position: relative;
+  border-radius: 0 50px 50px 0;
+}
+header .header-navbar .heade-navbar-boxLeft .header-navbar-boxLeft-btnSearch::before {
+  position: absolute;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 150%;
+  height: 150%;
+  border-radius: 10px 50px 50px 80px;
+  top: 0;
+  left: 0;
+}
+header .header-navbar .heade-navbar-boxLeft .header-navbar-boxLeft-btnSearch span.material-symbols-outlined {
+  position: relative;
+  font-size: 2em;
+  z-index: 1;
+}
+/* End Header Navbar */
+
+
+/* ==============================
+--- Slider ---
+============================== */
+
+/* ==============================
+--- Contents ---
+============================== */
+
+/* ==============================
+--- Footer ---
+============================== */
