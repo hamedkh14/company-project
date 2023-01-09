@@ -42,3 +42,33 @@ $(document).scroll(function () {
     $('.header-navbar').addClass('p-fixed');
   }
 });
+
+
+//Slider
+let countImages = $('.slider .slider-images div').length;
+let currentImage = 1;
+let lock = false;
+let animateSlide = setInterval(changeSlide, 5000);
+$('.slider-timeLine div').animate({width: '100%'}, {queue: false, duration: 5000});
+function changeSlide(num = 1) {
+  clearInterval(animateSlide);
+  animateSlide = setInterval(changeSlide, 5000);
+  $('.slider-timeLine div').css({width: '0'});
+  let nextImage = 0;
+  if(num == -1) {
+    nextImage = currentImage==1 ? countImages : currentImage - 1;
+  }else {
+    nextImage = currentImage==countImages ? 1 : currentImage + 1;
+  }
+
+  $('#slider-image'+currentImage).fadeOut();
+  $('#slider-image'+nextImage).fadeIn();
+
+  $('#slider-text'+currentImage).fadeOut();
+  $('#slider-text'+nextImage).fadeIn();
+
+  currentImage = nextImage;
+  $('.slider-timeLine div').animate({width: '100%'}, {queue: false, duration: 5000});
+}
+$('.slider-prev').click(() => {changeSlide(-1)})
+$('.slider-next').click(() => {changeSlide(1)})
