@@ -82,6 +82,7 @@ a:hover {
 .buttons span {
   position: relative;
   z-index: 1;
+  font-size: 1em;
 }
 .buttons::before {
   position: absolute;
@@ -561,6 +562,7 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
   background-color: #eee;
   overflow: hidden;
   position: relative;
+  transition: all var(--transition);
 }
 .slider .slider-images {
   width: 100%;
@@ -704,6 +706,11 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
 }
 
 @media only screen and (max-width: 1000px) {
+  header {
+    height: 80px;
+    width: 100%;
+  }
+
   header .header-topbar,
   header .header-middlebar-boxRight {
     display: none;
@@ -712,6 +719,7 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
   header .header-middlebar {
     height: 80px;
     position: fixed;
+    z-index: 99999;
   }
 
   header .header-middlebar .container {
@@ -887,5 +895,75 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
   .popup-search .popup-search-close {
     top: 30px;
     right: 30px;
+  }
+
+  .slider {
+    height: calc(100% - 80px);
+  }
+  .slider .slider-texts {
+    height: 500px;
+  }
+  .slider .slider-texts > div {
+    width: 70%;
+  }
+  .slider .slider-texts .slider-texts-section1 {
+    font-size: 0.9em;
+  }
+  .slider .slider-texts .slider-texts-section2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 70px;
+  }
+  .slider .slider-texts .slider-texts-section3 {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .slider {
+    height: calc(80% - 80px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .slider {
+    height: calc(60% - 80px);
+  }
+  .slider .slider-texts {
+    height: 300px;
+  }
+  .slider .slider-texts .slider-texts-section1 {
+    font-size: 0.7em;
+  }
+  .slider .slider-texts .slider-texts-section2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    line-height: 40px;
+  }
+  .slider .slider-texts .slider-texts-section3 {
+    font-size: 0.7em;
+    margin-bottom: 20px;
+  }
+  .slider .slider-texts .slider-texts-section4 .buttons {
+    min-width: 100px;
+    height: 35px;
+    padding: 0 10px;
+    position: relative;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--color-white);
+    border-radius: 50px;
+    transition: all var(--transition);
+  }
+  .buttons span {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .slider {
+    height: calc(50% - 80px);
   }
 }

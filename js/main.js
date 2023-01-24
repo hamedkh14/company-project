@@ -73,7 +73,6 @@ function changeSlide(num = 1) {
       $('#slider-text'+nextImage).children('.slider-texts-section4').delay(100).animate({'opacity': 1}, 300);
     });
   }});
-  ;
 
   currentImage = nextImage;
   $('.slider-timeLine div').animate({width: '100%'}, {queue: false, duration: 7000});
