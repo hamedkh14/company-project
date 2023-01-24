@@ -596,6 +596,9 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
   display: none;
   position: absolute;
 }
+.slider .slider-texts > div > * {
+  position: relative;
+}
 .slider .slider-texts .slider-texts-section1,
 .slider .slider-texts .slider-texts-section2,
 .slider .slider-texts .slider-texts-section3 {

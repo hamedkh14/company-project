@@ -48,11 +48,11 @@ $(document).scroll(function () {
 let countImages = $('.slider .slider-images div').length;
 let currentImage = 1;
 let lock = false;
-let animateSlide = setInterval(changeSlide, 5000);
-$('.slider-timeLine div').animate({width: '100%'}, {queue: false, duration: 5000});
+let animateSlide = setInterval(changeSlide, 7000);
+$('.slider-timeLine div').animate({width: '100%'}, {queue: false, duration: 7000});
 function changeSlide(num = 1) {
   clearInterval(animateSlide);
-  animateSlide = setInterval(changeSlide, 5000);
+  animateSlide = setInterval(changeSlide, 7000);
   $('.slider-timeLine div').css({width: '0'});
   let nextImage = 0;
   if(num == -1) {
@@ -64,11 +64,19 @@ function changeSlide(num = 1) {
   $('#slider-image'+currentImage).fadeOut();
   $('#slider-image'+nextImage).fadeIn();
 
-  $('#slider-text'+currentImage).fadeOut();
-  $('#slider-text'+nextImage).fadeIn();
+  $('#slider-text'+currentImage).hide();
+  $('#slider-text'+nextImage).children().css('opacity', '0');
+  $('#slider-text'+nextImage).show();
+  $('#slider-text'+nextImage).children('.slider-texts-section1').css( "top", "-50px" ).animate({top: 0, 'opacity': 1}, {queue: false, duration: 300, complete: function() {
+    $('#slider-text'+nextImage).children('.slider-texts-section2').css( "left", "-100px" ).animate({left: 0, 'opacity': 1}, 300);
+    $('#slider-text'+nextImage).children('.slider-texts-section3').css( "left", "-100px" ).delay(100).animate({left: 0, 'opacity': 1}, 300, function() {
+      $('#slider-text'+nextImage).children('.slider-texts-section4').delay(100).animate({'opacity': 1}, 300);
+    });
+  }});
+  ;
 
   currentImage = nextImage;
-  $('.slider-timeLine div').animate({width: '100%'}, {queue: false, duration: 5000});
+  $('.slider-timeLine div').animate({width: '100%'}, {queue: false, duration: 7000});
 }
-$('.slider-prev').click(() => {changeSlide(-1)})
-$('.slider-next').click(() => {changeSlide(1)})
+$('.slider-prev').click(() => {changeSlide(-1)});
+$('.slider-next').click(() => {changeSlide(1)});
