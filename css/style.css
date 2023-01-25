@@ -38,7 +38,8 @@ html, body {
   margin: 0;
   font-size: 16px;
   font-family: 'Renner';
-  background-color: #aaa;
+  background-color: #FFFFFF;
+  margin-bottom: 1000px;
 }
 
 * {
@@ -690,6 +691,173 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
 --- Contents ---
 ============================== */
 
+/* Section 1 */
+.section1 {
+  display: flex;
+  justify-content: center;
+}
+.section1 > div {
+  width: var(--width-default);
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  z-index: 101;
+  flex-wrap: wrap;
+}
+.section1 .section1-box {
+  width: calc(25% - 30px);
+  min-height: 400px;
+  position: relative;
+}
+
+.section1 .section1-box p {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.section1 .section1-box.offerBox,
+.section1 .section1-box:not(.offerBox) .section1-box-top,
+.section1 .section1-box:not(.offerBox) .section1-box-bottom {
+  padding: 30px;
+}
+.section1 .section1-box.offerBox {
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+}
+.section1 .section1-box.offerBox * {
+  color: var(--color-white);
+}
+.section1 .section1-box.offerBox .section1-box-top p {
+  margin-bottom: 20px;
+}
+.section1 .section1-box.offerBox .section1-box-bottom {
+  position: absolute;
+  border-radius: 50%;
+  border-bottom-left-radius: 0;
+  background-color: var(--color-secondary);
+  width: 150px;
+  height: 150px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 0;
+  font-weight: bold;
+  left: 0;
+  bottom: 0;
+}
+.section1 .section1-box.offerBox .section1-box-bottom span {
+  display: block;
+  margin-bottom: 13px;
+}
+.section1 .section1-box.offerBox .section1-box-bottom a {
+  border-bottom: 1px solid var(--color-white);
+  padding-bottom: 3px;
+  font-size: .9em;
+}
+
+.section1 .section1-box:not(.offerBox) * {
+  color: var(--color-primary);
+}
+.section1 .section1-box:not(.offerBox) .section1-box-top {
+  width: 100%;
+  height: 230px;
+  background-color: var(--color-white);
+  border-radius: 20px;
+  border-bottom-right-radius: 0;
+  border: 1px solid #efefef;
+  box-shadow: 0px 20px 40px 0px rgb(0 0 0 / 4%);
+  position: relative;
+}
+.section1 .section1-box:not(.offerBox) .section1-box-top * {
+  position: relative;
+  z-index: 1;
+}
+.section1 .section1-box:not(.offerBox) .section1-box-top::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 65% 20px;
+  background-color: var(--color-gray1);
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+.section1 .section1-box:not(.offerBox) .section1-box-top p {
+  position: relative;
+}
+.section1 .section1-box:not(.offerBox) .section1-box-top a {
+  position: absolute;
+  bottom: -15px;
+  left: 30px;
+}
+.section1 .section1-box:not(.offerBox) .section1-box-top button {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.section1 .section1-box:not(.offerBox) .section1-box-top button img {
+  width: 15px;
+}
+.section1 .section1-box:not(.offerBox) .section1-box-top button:hover {
+  background-color: var(--color-secondary);
+}
+.section1 .section1-box:not(.offerBox) .section1-box-top span {
+  position: absolute;
+  font-weight: bold;
+  font-size: 3.5em;
+  -webkit-text-stroke: .001em var(--color-primary-alpha);
+  color: transparent;
+  bottom: 7px;
+  right: 30px;
+}
+.section1 .section1-box:not(.offerBox) .section1-box-top div {
+  width: 60px;
+  height: 60px;
+  background-image: var(--image-url);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 30px;
+  bottom: 45px;
+  filter: drop-shadow(0px 0px 8px rgba(186, 16, 16, 0.5));
+}
+.section1 .section1-box:not(.offerBox) .section1-box-bottom {
+  min-height: 170px;
+  padding-bottom: 0;
+}
+.section1 .section1-box:not(.offerBox) .section1-box-bottom ul {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.section1 .section1-box:not(.offerBox) .section1-box-bottom ul li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.section1 .section1-box:not(.offerBox) .section1-box-bottom ul li img {
+  width: 15px;
+}
+
 /* ==============================
 --- Footer ---
 ============================== */
@@ -702,6 +870,15 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
 @media only screen and (max-width: 1200px) {
   :root {
     --width-default: calc(100% - 20px);
+  }
+  .section1 .section1-box.offerBox,
+  .section1 .section1-box:not(.offerBox) .section1-box-top,
+  .section1 .section1-box:not(.offerBox) .section1-box-bottom {
+    padding: 15px;
+  }
+  .section1 .section1-box:not(.offerBox) .section1-box-top a,
+  .section1 .section1-box:not(.offerBox) .section1-box-top div {
+    left: 15px;
   }
 }
 
@@ -918,6 +1095,10 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
     font-size: 1em;
     margin-bottom: 20px;
   }
+  
+  .section1 .section1-box {
+    width: calc(50% - 30px);
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -959,6 +1140,14 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
   }
   .buttons span {
     font-size: 0.8em;
+  }
+
+  .section1 > div {
+    margin-top: -25px;
+    margin-bottom: -25px;
+  }
+  .section1 .section1-box {
+    width: 100%;
   }
 }
 
