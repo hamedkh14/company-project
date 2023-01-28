@@ -963,6 +963,44 @@ hr.divider {
   margin-top: 5px;
 }
 
+/* Section3 */
+.section3 {
+  width: 100%;
+  height: 450px;
+  background-image: var(--image-url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.section3::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  filter: opacity(0.9);
+  width: 100%;
+  height: 100%;
+}
+.section3 div {
+  width: 1000px;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  margin-top: -100px;
+}
+.section3 div h2 {
+  font-size: 2.8em;
+  font-weight: bold;
+  color: var(--color-white);
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 /* ==============================
 --- Footer ---
 ============================== */
@@ -1239,6 +1277,11 @@ hr.divider {
   .section2 .section2-boxRight .section2-boxRight-footer {
     gap: 0px;
   }
+
+  /* Section3 */
+  .section3 div {
+    width: var(--width-default);
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -1303,6 +1346,11 @@ hr.divider {
     width: 100%;
     justify-content: space-between;
   }
+
+  /* Section3 */
+  .section3 div h2 {
+    font-size: 2em;
+  }
 }
 
 @media only screen and (max-width: 470px) {
@@ -1326,5 +1374,10 @@ hr.divider {
   .section2 .section2-boxRight .section2-boxRight-footer {
     margin-top: 20px;
     flex-direction: column-reverse;
+  }
+
+  /* Section3 */
+  .section3 div h2 {
+    font-size: 1.7em;
   }
 }
