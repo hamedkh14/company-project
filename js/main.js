@@ -89,3 +89,12 @@ $('.tabs').click(function () {
   $('.tabContent').hide();
   $('#content'+idContent).fadeIn();
 });
+
+// Section5
+$('.tabTitle').click(function() {
+  $('.section5-boxRight-tabs .tabContent').slideUp();
+  $('.tabTitle').children('span').text('add');
+  
+  $(this).next('.tabContent').slideToggle();
+  $(this).children('span').text('remove');
+});

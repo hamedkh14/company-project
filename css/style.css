@@ -708,10 +708,10 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
 ============================== */
 
 /* Section 1 */
-.section1, .section2, .section3, .section4 {
+.section1, .section2, .section3, .section4, .section5 {
   justify-content: center;
 }
-.section1 > div, .section2 > div, .section3 > div, .section4 > div {
+.section1 > div, .section2 > div, .section3 > div, .section4 > div, .section5 > div {
   width: var(--width-default);
 }
 .section1 > div {
@@ -896,12 +896,14 @@ hr.divider {
   border-bottom-right-radius: 0;
 }
 .section2 .section2-boxRight span.label,
-.section4 .tabContent .section4-boxRight span.label {
+.section4 .tabContent .section4-boxRight span.label,
+.section5 .section5-boxLeft span.label {
   color: var(--color-secondary);
   font-weight: bold;
 }
 .section2 .section2-boxRight h2.title,
-.section4 .tabContent .section4-boxRight h2.title {
+.section4 .tabContent .section4-boxRight h2.title,
+.section5 .section5-boxLeft h2.title {
   color: var(--color-primary);
   font-weight: bold;
   font-size: 3em;
@@ -909,7 +911,8 @@ hr.divider {
   line-height: 1.2;
 }
 .section2 .section2-boxRight p.description,
-.section4 .tabContent .section4-boxRight p.description {
+.section4 .tabContent .section4-boxRight p.description,
+.section5 .section5-boxLeft p.description {
   color: var(--color-gray2);
 }
 .section2 .section2-boxRight ul,
@@ -1048,6 +1051,46 @@ hr.divider {
 .section4 .section4-contents .tabContent:first-child {
   display: block;
 }
+
+/* Section5 */
+.section5 > div {
+  gap: 40px;
+}
+.section5 .section5-boxLeft,
+.section5 .section5-boxRight {
+  width: 50%;
+  flex-shrink: 0;
+}
+.section5 .section5-boxRight {
+  flex-direction: column;
+  gap: 20px;
+}
+.section5 .section5-boxRight .section5-boxRight-tabs {
+  width: 100%;
+}
+.section5 .section5-boxRight .section5-boxRight-tabs .tabTitle {
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+  background-color: var(--color-gray1);
+  padding: 0 20px;
+  color: var(--color-primary);
+  font-weight: bold;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+.section5 .section5-boxRight .section5-boxRight-tabs .tabTitle span.material-symbols-outlined {
+  font-size: 1.4em;
+}
+
+.section5 .section5-boxRight .section5-boxRight-tabs .tabContent {
+  color: var(--color-gray2);
+  margin-top: 20px;
+  padding: 0 20px;
+  display: none;
+}
+
 /* ==============================
 --- Footer ---
 ============================== */
@@ -1304,7 +1347,9 @@ hr.divider {
   .section4 .section4-contents .tabContent .section4-boxLeft {
     width: 100%;
   }
-  .section2 .section2-boxRight h2.title {
+  .section2 .section2-boxRight h2.title,
+  .section4 .section4-contents .tabContent .section4-boxRight h2.title,
+  .section5 .section5-boxLeft h2.title {
     font-size: 3em;
     margin: 5px 0 0px;
     line-height: 1;
@@ -1346,8 +1391,19 @@ hr.divider {
 
   /* Section 2 */
   .section2 .section2-boxRight h2.title,
-  .section4 .section4-contents .tabContent .section4-boxRight h2.title {
+  .section4 .section4-contents .tabContent .section4-boxRight h2.title,
+  .section5 .section5-boxLeft h2.title {
     font-size: 2em;
+  }
+
+  /* Section5 */
+  .section5 > div {
+    flex-direction: column;
+  }
+  .section5 .section5-boxLeft,
+  .section5 .section5-boxRight {
+    width: 100%;
+    flex-shrink: 0;
   }
 }
 
@@ -1382,7 +1438,7 @@ hr.divider {
     border-radius: 50px;
     transition: all var(--transition);
   }
-  .buttons span {
+  .slider .slider-texts .slider-texts-section4 .buttons span {
     font-size: 0.8em;
   }
 
