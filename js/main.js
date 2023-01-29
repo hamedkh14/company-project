@@ -79,3 +79,13 @@ function changeSlide(num = 1) {
 }
 $('.slider-prev').click(() => {changeSlide(-1)});
 $('.slider-next').click(() => {changeSlide(1)});
+
+
+// Section4
+$('.tabs').click(function () { 
+  let idContent = $(this).attr('data-id');
+  $('.tabs').removeClass('active');
+  $(this).addClass('active');
+  $('.tabContent').hide();
+  $('#content'+idContent).fadeIn();
+});

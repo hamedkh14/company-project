@@ -708,11 +708,13 @@ header .header-navbar .container .header-navbar-boxRight .boxes div:nth-child(2)
 ============================== */
 
 /* Section 1 */
-.section1 {
+.section1, .section2, .section3, .section4 {
   justify-content: center;
 }
-.section1 > div {
+.section1 > div, .section2 > div, .section3 > div, .section4 > div {
   width: var(--width-default);
+}
+.section1 > div {
   justify-content: space-between;
   gap: 30px;
   position: relative;
@@ -879,56 +881,62 @@ hr.divider {
 }
 
 /* Section 2 */
-.section2 {
-  justify-content: center;
-}
 .section2 > div {
-  width: var(--width-default);
   gap: 40px;
 }
-.section2 .section2-boxLeft {
+.section2 .section2-boxLeft,
+.section4 .tabContent .section4-boxLeft {
   width: 50%;
   flex-shrink: 0;
 }
-.section2 .section2-boxLeft img {
+.section2 .section2-boxLeft img,
+.section4 .tabContent .section4-boxLeft img {
   width: 100%;
   border-radius: 20px;
   border-bottom-right-radius: 0;
 }
-.section2 .section2-boxRight span.label {
+.section2 .section2-boxRight span.label,
+.section4 .tabContent .section4-boxRight span.label {
   color: var(--color-secondary);
   font-weight: bold;
 }
-.section2 .section2-boxRight h2.title {
+.section2 .section2-boxRight h2.title,
+.section4 .tabContent .section4-boxRight h2.title {
   color: var(--color-primary);
   font-weight: bold;
   font-size: 3em;
   margin: 5px 0 20px;
   line-height: 1.2;
 }
-.section2 .section2-boxRight p.description {
+.section2 .section2-boxRight p.description,
+.section4 .tabContent .section4-boxRight p.description {
   color: var(--color-gray2);
 }
-.section2 .section2-boxRight ul {
+.section2 .section2-boxRight ul,
+.section4 .tabContent .section4-boxRight ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .section2 .section2-boxRight ul,
 .section2 .section2-boxRight .section2-boxRight-statistics,
-.section2 .section2-boxRight .section2-boxRight-footer {
+.section2 .section2-boxRight .section2-boxRight-footer,
+.section4 .tabContent .section4-boxRight ul {
   margin-top: 50px;
 }
-.section2 .section2-boxRight ul li {
+.section2 .section2-boxRight ul li,
+.section4 .tabContent .section4-boxRight ul li {
   display: flex;
   gap: 10px;
   margin-top: 10px;
 }
-.section2 .section2-boxRight ul li a {
+.section2 .section2-boxRight ul li a,
+.section4 .tabContent .section4-boxRight ul li a {
   color: var(--color-primary);
   font-weight: bold;
 }
-.section2 .section2-boxRight ul li img {
+.section2 .section2-boxRight ul li img,
+.section4 .tabContent .section4-boxRight ul li img {
   position: relative;
   top: -5px;
   flex-shrink: 0;
@@ -965,14 +973,12 @@ hr.divider {
 
 /* Section3 */
 .section3 {
-  width: 100%;
   height: 450px;
   background-image: var(--image-url);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin-top: 100px;
-  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -1000,6 +1006,47 @@ hr.divider {
   color: var(--color-white);
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Section4 */
+.section4 > div {
+  flex-direction: column;
+  position: relative;
+  margin-top: -30px;
+}
+.section4 .section4-tabs {
+  width: 100%;
+  justify-content: space-between;
+  gap: 40px;
+}
+.section4 .section4-tabs button {
+  width: 33.3%;
+  height: 60px;
+  cursor: pointer;
+  font-size: 1.3em;
+  font-weight: bold;
+  background-color: var(--color-white);
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0px 20px 40px 0px rgb(0 0 0 / 4%);
+  color: var(--color-primary);
+}
+.section4 .section4-tabs button.active {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.section4 .section4-contents .tabContent {
+  display: none;
+  margin-top: 50px;
+}
+
+.section4 .section4-contents .tabContent > div {
+  gap: 40px;
+}
+
+.section4 .section4-contents .tabContent:first-child {
+  display: block;
 }
 /* ==============================
 --- Footer ---
@@ -1253,7 +1300,8 @@ hr.divider {
   .section2 > div {
     flex-direction: column;
   }
-  .section2 .section2-boxLeft {
+  .section2 .section2-boxLeft,
+  .section4 .section4-contents .tabContent .section4-boxLeft {
     width: 100%;
   }
   .section2 .section2-boxRight h2.title {
@@ -1263,7 +1311,8 @@ hr.divider {
   }
   .section2 .section2-boxRight ul,
   .section2 .section2-boxRight .section2-boxRight-statistics,
-  .section2 .section2-boxRight .section2-boxRight-footer {
+  .section2 .section2-boxRight .section2-boxRight-footer,
+  .section4 .section4-contents .tabContent .section4-boxRight ul {
     margin-top: 30px;
   }
   .section2 .section2-boxRight .section2-boxRight-statistics,
@@ -1282,6 +1331,11 @@ hr.divider {
   .section3 div {
     width: var(--width-default);
   }
+
+  /* Section4 */
+  .section4 .section4-contents .tabContent > div {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -1291,7 +1345,8 @@ hr.divider {
   
 
   /* Section 2 */
-  .section2 .section2-boxRight h2.title {
+  .section2 .section2-boxRight h2.title,
+  .section4 .section4-contents .tabContent .section4-boxRight h2.title {
     font-size: 2em;
   }
 }
@@ -1351,6 +1406,14 @@ hr.divider {
   .section3 div h2 {
     font-size: 2em;
   }
+
+  /* Section4 */
+  .section4 .section4-tabs {
+    gap: 20px;
+  }
+  .section4 .section4-tabs button {
+    font-size: 1em;
+  }
 }
 
 @media only screen and (max-width: 470px) {
@@ -1379,5 +1442,17 @@ hr.divider {
   /* Section3 */
   .section3 div h2 {
     font-size: 1.7em;
+  }
+
+  /* Section4 */
+  .section4 > div {
+    margin-top: -20px;
+  }
+  .section4 .section4-tabs {
+    gap: 10px;
+  }
+  .section4 .section4-tabs button {
+    height: 40px;
+    font-size: 0.8em;
   }
 }
