@@ -79,6 +79,13 @@ function changeSlide(num = 1) {
 }
 $('.slider-prev').click(() => {changeSlide(-1)});
 $('.slider-next').click(() => {changeSlide(1)});
+document.addEventListener('visibilitychange', function (event) {
+  if (document.hidden) {
+    clearInterval(animateSlide);
+  } else {
+    setInterval(changeSlide, 7000);
+  }
+});
 
 
 // Section4
@@ -97,4 +104,16 @@ $('.tabTitle').click(function() {
   
   $(this).next('.tabContent').slideToggle();
   $(this).children('span').text('remove');
+});
+
+// Scroll to Top
+$(document).scroll(function () { 
+  if($(document).scrollTop() > 300) {
+    $('.scrollToTop').css('bottom', '30px');
+  }else {
+    $('.scrollToTop').css('bottom', '-100%');
+  }
+});
+$('.scrollToTop').click(function() {
+  $('html, body').animate({scrollTop: 0}, 300);
 });
